@@ -37,14 +37,13 @@ naoki$cd new-app/
 - Create rails app and configure it
   ```
   make rails--new
-  docker-compose build
+  make build
   ```
-- connect to db
-  ```
-  cp config/database.yml app/config/database.yml
-  docker-compose up
-  docker-compose run web rake db:create
-  ```
+
+- copy `database.yml` to project `config/database.yml`.
+- `make db-build`
+- `make up`
+
 - ensure it works
   - http://localhost:3000
 - replace/append boilerplate
