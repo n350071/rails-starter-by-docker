@@ -1,85 +1,78 @@
-## What is this?
-For the quick start a new project, I prepare a boilerplate code to start project and CICD. This repository goal is you only press "Make rails--new" then, everything is prepared.
+# docker-for-rails
 
-I'm going to prepare these things.
-- prepare Docker and Docker-compose
-- prepare Gemfile (You should choose what you really use)
-- prepare circleci/config.yml
-- prepare k8s (in the future)
-- guide for GCP / AWS & Github & circleci
+Instantly, you can create a rails app.
+
+## Screenshot
+
+![screenshot](screen.png)
 
 ## Usage
 
-### Create Project
-#### 1. Download Docker Machine
+### 1. Download Docker Machine
 - [Docker for Mac](https://hub.docker.com/editions/community/docker-ce-desktop-mac)
 - [Docker for Ubuntu](https://docs.docker.com/v17.12/install/linux/docker-ce/ubuntu/#install-docker-ce)
 - [Docker for Windows](https://hub.docker.com/editions/community/docker-ce-desktop-windows)
 - and so on..,
 
-#### 2. Clone this repository
-naoki$mkdir new-app
-naoki$cd new-app/
-- `$ git clone git@github.com:nao0515ki/docker-for-rails.git`
+### 2. Clone this repository to your new app directory
+```
+$ mkdir new-app
+$ cd new-app/
+$ git clone git@github.com:nao0515ki/docker-for-rails.git
+$ cp -r docker-for-rails/* .
+$ cp docker-for-rails/.gitignore .
+$ rm Screen.png
+$ rm -rf docker-for-rails/
+```
 
-#### 3. Put files into your project
-- put files
-  ```
-  cp -r docker-for-rails/* .
-  cp docker-for-rails/.gitignore .
-  rm -rf docker-for-rails/
-  ```
+now, your directory should be like this.
+```
+new-app/
+  .gitignore
+  database.yml
+  docker-compose.yml
+  Dockerfile
+  entrypoint.sh
+  Gemfile
+  Gemfile.lock
+  Makefile
+  README.md
+  README_template.md
+  Screen.png
+```
 
-#### 4. Custom for your project
-- Gemfile
+### 3. Create your project
+#### 1. docker build & rails new
+```
+$ make init
+```
 
-#### 5. Create your project
-- Create rails app and configure it
-  ```
-  make rails--new
-  make build
-  ```
+#### 2. database config
+```
+$ mv .database.yml config/database.yml
+$ make db-build
+```
 
-- copy `database.yml` to project `config/database.yml`.
-- `make db-build`
-- `make up`
+### 3. Start your project
+```
+$ make up
+```
 
-- ensure it works
-  - http://localhost:3000
-- replace/append boilerplate
-  - gitignore
-    ```
-    echo -e "\n" >> .gitignore
-    cat >> .gitignore << EOF
-    # OSX template
-    .DS_Store
-    EOF
-    ```
-  - README
-    ```
-    rm README.md
-    mv README_template.md README.md
-    ```
-- git commit
-  - add .DS_Store to .gitignore
-  ```
-  naoki$git init
-  naoki$git add -A
-  naoki$git commit -m "first commit"
-  ```
+It starts rails and you can check it by `http://localhost:3000`.
 
-### Set up CICD
-- push it to GitHub
-  - make a GitHub repository
-    - Repository name : project name
-    - others : Empty / None
-  - push it
-    - `git remote add origin git@github.com:nao0515ki/{repository-name}.git`
-    - `git push origin master`
-- set up GCP
-- setup GCB (Google Cloud Build)
-  - [install Cloud Build to GitHub](https://cloud.google.com/cloud-build/docs/run-builds-on-github) or [configure Cloud Build](https://github.com/settings/installations)
-- ensure it works
+when you want to stop your docker, just `make stop`
+
+### 4. clean up
+
+```
+# gitignore
+echo -e "\n" >> .gitignore
+
+# if you want
+rm README.md
+mv README_template.md README.md
+```
+
 
 ## References
 - [Overview of docker-compose CLI](https://docs.docker.com/compose/reference/overview/)

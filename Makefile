@@ -1,19 +1,19 @@
 help:
 	cat Makefile
 
-rails--new:
-	docker-compose run web rails new . --force --no-deps --database=postgresql
-
 init:
 	make build
-	make db-build
+	make rails--new
 
 build:
 	docker-compose build
-	make install
+	make bundle-install
 
-install:
+bundle-install:
 	docker-compose run web bundle install
+
+rails--new:
+	docker-compose run web rails new . --force --no-deps --database=postgresql
 
 db-build:
 	docker-compose run web bundle exec rails db:create
@@ -21,4 +21,7 @@ db-build:
 	docker-compose run web bundle exec rails db:seed
 
 up:
-	docker-compose up
+	docker-compose up -d
+
+stop:
+	docker-compose stop
