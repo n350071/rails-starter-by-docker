@@ -63,16 +63,25 @@ It starts rails and you can check it by `http://localhost:3000`.
 when you want to stop your docker, just `make stop`
 
 ### 4. clean up
-
+#### Remove screenshot.png
 ```
-# gitignore
-echo -e "\n" >> .gitignore
+rm screenshot.png
+```
 
-# if you want
+#### set up gitignore
+```
+echo -e "\n" >> .gitignore
+cat >> .gitignore << EOF
+# OSX system file
+.DS_Store
+EOF
+```
+
+#### custom README (if you want)
+```
 rm README.md
 mv README_template.md README.md
 ```
-
 
 ## References
 - [Overview of docker-compose CLI](https://docs.docker.com/compose/reference/overview/)
