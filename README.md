@@ -4,7 +4,7 @@ Instantly, you can create a rails app.
 
 ## Screenshot
 
-![screenshot](screen.png)
+![screenshot](screenshot.png)
 
 ## Usage
 
