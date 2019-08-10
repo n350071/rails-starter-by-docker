@@ -21,20 +21,9 @@ $ cd new-app/
 $ git clone git@github.com:nao0515ki/docker-for-rails.git
 $ cp -r docker-for-rails/ .
 $ rm screenshot.png
-$ rm -rf docker-for-rails/
 $ rm -rf .git
-```
-
-local debug
-```
-$ mkdir new-app
-$ cd new-app/
-$ cp -r ../docker/docker-for-rails/ .
-$ rm screenshot.png
 $ rm -rf docker-for-rails/
-$ rm -rf .git
 ```
-
 
 now, your directory should be like this.
 ```
