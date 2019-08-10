@@ -63,6 +63,13 @@ $ mv database.yml config/database.yml
 $ make db-build
 ```
 
+If you met a problem with like this message, try `make build-with-docker-trouble` and `make db-build`.
+
+```
+Could not find public_suffix-3.1.1 in any of the sources
+Run `bundle install` to install missing gems.
+```
+
 ### 3. Start your project
 ```
 $ make up

@@ -7,9 +7,6 @@ RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources
 ## install nodejs postgresql-client yarn
 RUN apt-get update -qq && apt-get install -y nodejs postgresql-client && apt-get install yarn -y &&rm -rf /var/lib/apt/lists/*
 
-# throw errors if Gemfile has been modified since Gemfile.lock
-RUN bundle config --global frozen 1
-
 RUN mkdir /myapp
 WORKDIR /myapp
 COPY Gemfile /myapp/Gemfile
