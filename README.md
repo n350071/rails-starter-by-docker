@@ -1,4 +1,4 @@
-# docker-for-rails
+# rails-starter-by-docker
 
 Instantly, you can create a rails app.
 
@@ -18,11 +18,11 @@ Instantly, you can create a rails app.
 ```
 $ mkdir new-app
 $ cd new-app/
-$ git clone git@github.com:nao0515ki/docker-for-rails.git
-$ cp -r docker-for-rails/ .
+$ git clone git@github.com:nao0515ki/rails-starter-by-docker.git
+$ cp -r rails-starter-by-docker/ .
 $ rm screenshot.png
 $ rm -rf .git
-$ rm -rf docker-for-rails/
+$ rm -rf rails-starter-by-docker/
 ```
 
 now, your directory should be like this.
