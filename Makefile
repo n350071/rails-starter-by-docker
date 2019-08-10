@@ -7,10 +7,11 @@ init:
 
 build:
 	docker-compose build
-	make bundle-install
+	make install
 
-bundle-install:
+install:
 	docker-compose run web bundle install
+	docker-compose run web yarn install
 
 rails--new:
 	docker-compose run web rails new . --force --no-deps --database=postgresql
