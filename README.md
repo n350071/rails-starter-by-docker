@@ -19,26 +19,36 @@ Instantly, you can create a rails app.
 $ mkdir new-app
 $ cd new-app/
 $ git clone git@github.com:nao0515ki/docker-for-rails.git
-$ cp -r docker-for-rails/* .
-$ cp docker-for-rails/.gitignore .
-$ rm Screen.png
+$ cp -r docker-for-rails/ .
+$ rm screenshot.png
 $ rm -rf docker-for-rails/
+$ rm -rf .git
 ```
+
+local debug
+```
+$ mkdir new-app
+$ cd new-app/
+$ cp -r ../docker/docker-for-rails/ .
+$ rm screenshot.png
+$ rm -rf docker-for-rails/
+$ rm -rf .git
+```
+
 
 now, your directory should be like this.
 ```
-new-app/
-  .gitignore
-  database.yml
-  docker-compose.yml
-  Dockerfile
-  entrypoint.sh
-  Gemfile
-  Gemfile.lock
-  Makefile
-  README.md
-  README_template.md
-  Screen.png
+$ ls -A -1
+.gitignore
+Dockerfile
+Gemfile
+Gemfile.lock
+Makefile
+README.md
+README_template.md
+database.yml
+docker-compose.yml
+entrypoint.sh
 ```
 
 ### 3. Create your project
@@ -49,8 +59,15 @@ $ make init
 
 #### 2. database config
 ```
-$ mv .database.yml config/database.yml
+$ mv database.yml config/database.yml
 $ make db-build
+```
+
+If you met a problem with like this message, try `make build-with-docker-trouble` and `make db-build`.
+
+```
+Could not find public_suffix-3.1.1 in any of the sources
+Run `bundle install` to install missing gems.
 ```
 
 ### 3. Start your project
@@ -62,11 +79,7 @@ It starts rails and you can check it by `http://localhost:3000`.
 
 when you want to stop your docker, just `make stop`
 
-### 4. clean up
-#### Remove screenshot.png
-```
-rm screenshot.png
-```
+### 4. Options
 
 #### set up gitignore
 ```
