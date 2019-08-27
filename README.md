@@ -1,4 +1,4 @@
-# rails-starter-by-docker
+# rails-starter-kit-with-docker
 
 Instantly, you can create a rails app.
 
@@ -18,7 +18,7 @@ Instantly, you can create a rails app.
 ```
 $ mkdir new-app
 $ cd new-app/
-$ git clone git@github.com:n350071/rails-starter-by-docker.git
+$ git clone git@github.com:n350071/rails-starter-kit-with-docker.git
 $ cp -r rails-starter-by-docker/ .
 $ rm screenshot.png
 $ rm -rf .git
