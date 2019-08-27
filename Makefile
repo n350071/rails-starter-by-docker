@@ -26,6 +26,9 @@ db-build:
 	docker-compose run web bundle exec rails db:seed
 
 up:
+	docker-compose up
+
+up-d:
 	docker-compose up -d
 
 stop:

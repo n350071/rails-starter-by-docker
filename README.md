@@ -18,7 +18,7 @@ Instantly, you can create a rails app.
 ```
 $ mkdir new-app
 $ cd new-app/
-$ git clone git@github.com:nao0515ki/rails-starter-by-docker.git
+$ git clone git@github.com:n350071/rails-starter-by-docker.git
 $ cp -r rails-starter-by-docker/ .
 $ rm screenshot.png
 $ rm -rf .git
@@ -61,7 +61,7 @@ Run `bundle install` to install missing gems.
 
 ### 3. Start your project
 ```
-$ make up
+$ make up-d
 ```
 
 It starts rails and you can check it by `http://localhost:3000`.
