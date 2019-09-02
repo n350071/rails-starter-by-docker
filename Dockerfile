@@ -1,5 +1,8 @@
 FROM ruby:2.6.3
 
+# railsコンソール中で日本語入力するための設定 <- NEW
+ENV LANG C.UTF-8
+
 # prepare installing yarn
 RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
 RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list

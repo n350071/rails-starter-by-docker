@@ -18,7 +18,7 @@ install:
 	docker-compose run web yarn install
 
 rails--new:
-	docker-compose run web rails new . --force --no-deps --database=postgresql
+	docker-compose run web rails new . --force --no-deps --database=mysql
 
 db-build:
 	docker-compose run web bundle exec rails db:create
