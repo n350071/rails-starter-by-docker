@@ -31,6 +31,9 @@ install:
 	docker-compose run web bundle install
 	docker-compose run web yarn install
 
+webpacker-install:
+	docker-compose run web bundle exec rails webpacker:install
+
 rails-console:
 	docker-compose run web bundle exec rails console
 
@@ -47,6 +50,7 @@ init-project:
 	sh gitignore.sh
 	make docker-build-no-cache
 	make install
+	make webpacker-install
 	mv database.yml config/database.yml
 	make db-create
 	make up-d
