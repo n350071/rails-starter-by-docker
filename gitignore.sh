@@ -5,3 +5,4 @@ cat >> .gitignore << EOF
 .DS_Store
 EOF
 
+rm gitignore.sh

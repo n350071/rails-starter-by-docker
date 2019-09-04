@@ -22,8 +22,7 @@ git clone git@github.com:n350071/rails-starter-kit-with-docker.git
 
 ### 2. Copy build files
 ```
-cd rails-starter-kit-with-docker/
-make cp-build-files
+sh rails-starter-kit-with-docker/cp_build_file.sh
 ```
 
 ### 3. Initialize your new project

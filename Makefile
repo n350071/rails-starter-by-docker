@@ -42,18 +42,9 @@ rollback:
 
 
 # commands for init project
-cp-build-files:
-	cp -r . ../
-	cd ../
-	rm screenshot.png
-	rm -rf .git
-	rm -rf rails-starter-kit-with-docker/
-	ls -A -1
-
 init-project:
 	make rails-new
 	sh gitignore.sh
-	rm gitignore.sh
 	make docker-build-no-cache
 	make install
 	mv database.yml config/database.yml
