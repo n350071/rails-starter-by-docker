@@ -7,85 +7,38 @@ Instantly, you can create a rails app.
 ![screenshot](screenshot.png)
 
 ## Usage
-
-### 1. Download Docker Machine
+I suppose that you already have docker machine.  
+If you don't have it, please install it.
 - [Docker for Mac](https://hub.docker.com/editions/community/docker-ce-desktop-mac)
 - [Docker for Ubuntu](https://docs.docker.com/v17.12/install/linux/docker-ce/ubuntu/#install-docker-ce)
 - [Docker for Windows](https://hub.docker.com/editions/community/docker-ce-desktop-windows)
-- and so on..,
 
-### 2. Clone this repository to your new app directory
+### 1. Clone this repository to your new app directory
 ```
-$ mkdir new-app
-$ cd new-app/
-$ git clone git@github.com:n350071/rails-starter-kit-with-docker.git
-$ cp -r rails-starter-by-docker/ .
-$ rm screenshot.png
-$ rm -rf .git
-$ rm -rf rails-starter-by-docker/
+mkdir new-app
+cd new-app/
+git clone git@github.com:n350071/rails-starter-kit-with-docker.git
 ```
 
-now, your directory should be like this.
+### 2. Copy build files
 ```
-$ ls -A -1
-.gitignore
-Dockerfile
-Gemfile
-Gemfile.lock
-Makefile
-README.md
-README_template.md
-database.yml
-docker-compose.yml
-entrypoint.sh
+cd rails-starter-kit-with-docker/
+make cp-build-files
 ```
 
-### 3. Create your project
-#### 1. docker build & rails new
+### 3. Initialize your new project
 ```
-$ make init
-```
-
-#### 2. database config
-```
-$ mv database.yml config/database.yml
-$ make db-build
+make init-project
 ```
 
-If you met a problem with like this message, try `make build-with-docker-trouble` and `make db-build`.
+It starts rails and you can check it by `http://localhost:3000`.  
+when you want to stop your docker, please type
 
 ```
-Could not find public_suffix-3.1.1 in any of the sources
-Run `bundle install` to install missing gems.
+make stop
 ```
 
-### 3. Start your project
+## Help
 ```
-$ make up-d
+make help
 ```
-
-It starts rails and you can check it by `http://localhost:3000`.
-
-when you want to stop your docker, just `make stop`
-
-### 4. Options
-
-#### set up gitignore
-```
-echo -e "\n" >> .gitignore
-cat >> .gitignore << EOF
-# OSX system file
-.DS_Store
-EOF
-```
-
-#### custom README (if you want)
-```
-rm README.md
-mv README_template.md README.md
-```
-
-## References
-- [Overview of docker-compose CLI](https://docs.docker.com/compose/reference/overview/)
-- [Quickstart: Compose and Rails](https://docs.docker.com/compose/rails/)
-- [Google Cloud Build](https://cloud.google.com/cloud-build/)
