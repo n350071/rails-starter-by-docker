@@ -49,8 +49,8 @@ init-project:
 	make rails-new
 	sh gitignore.sh
 	make docker-build-no-cache
-	make install
 	make webpacker-install
+	make install
 	mv database.yml config/database.yml
 	make db-create
 	make up-d
