@@ -54,10 +54,10 @@ init-project:
 	mv database.yml config/database.yml
 	make db-create
 	make up-d
-	echo '🎉 http://localhost:3000'
-	echo 'if you want to stop docker-compose, type "make stop"'
 	git add .
 	git commit -m ":tada: first commit"
+	echo '🎉 http://localhost:3000'
+	echo '⛔️ if you want to stop docker-compose, type "make stop"'
 
 # options
 ## docker-compose --no-deps: Don't start linked services. (only starts web service.)
