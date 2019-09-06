@@ -1,22 +1,29 @@
 # rails-starter-kit-with-docker
 
-Instantly, you can create a rails app.
+You can create a rails app on docker with only 3 commands.
 
 ## Screenshot
 
 ![screenshot](screenshot.png)
 
 ## Usage
+### Assumptions
 I suppose that you already have docker machine.  
 If you don't have it, please install it.
 - [Docker for Mac](https://hub.docker.com/editions/community/docker-ce-desktop-mac)
 - [Docker for Ubuntu](https://docs.docker.com/v17.12/install/linux/docker-ce/ubuntu/#install-docker-ce)
 - [Docker for Windows](https://hub.docker.com/editions/community/docker-ce-desktop-windows)
 
-### 1. Clone this repository to your new app directory
+And also, you're at the project root directory like `new-app`.  
+If you haven't been yet, type following commands.
+
 ```
 mkdir new-app
 cd new-app/
+```
+
+### 1. Clone this repository to your new app directory
+```
 git clone git@github.com:n350071/rails-starter-kit-with-docker.git
 ```
 
