@@ -1,2 +1,11 @@
 ### OSX template
 .DS_Store
+
+# docker database
+/src
+
+# gems
+vendor/
+
+.env
+

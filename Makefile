@@ -47,13 +47,13 @@ rollback:
 # commands for init project
 init-project:
 	make rails-new
-	sh gitignore.sh
 	make docker-build-no-cache
 	make webpacker-install
 	make install
 	mv database.yml config/database.yml
 	make db-create
 	make up-d
+	sh gitignore.sh
 	git add .
 	git commit -m ":tada: first commit"
 	echo '🎉 http://localhost:3000'
@@ -64,7 +64,7 @@ init-project:
 ## rails new --force: to overwrite Gemfile
 ## rails new --skip-bundle: we will bundle later, so skip
 rails-new:
-	docker-compose run --no-deps web rails new . --force --skip-bundle --database=mysql
+	docker-compose run --no-deps web rails new . --force --database=mysql
 
 db-create:
 	docker-compose run web bundle exec rails db:create
