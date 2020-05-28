@@ -2,11 +2,12 @@ help:
 	cat Makefile
 
 # Start & Stop docker
+# for the binding.pry, use 'run' instead of the 'up'
 up:
-	docker-compose up
+	docker-compose run --service-ports web
 
-up-d:
-	docker-compose up -d
+webpacker:
+	docker-compose run web bin/webpack-dev-server
 
 stop:
 	docker-compose stop
