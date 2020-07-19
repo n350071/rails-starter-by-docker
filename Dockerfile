@@ -15,12 +15,12 @@ RUN apt-get update -qq \
   && apt-get install apt-file -y && apt-file update && apt-get install vim -y \
   && rm -rf /var/lib/apt/lists/*
 
-RUN mkdir /stock
-WORKDIR /stock
-COPY Gemfile /stock/Gemfile
-COPY Gemfile.lock /stock/Gemfile.lock
+RUN mkdir /myapp
+WORKDIR /myapp
+COPY Gemfile /myapp/Gemfile
+COPY Gemfile.lock /myapp/Gemfile.lock
 RUN bundle install
-COPY . /stock
+COPY . /myapp
 
 # Add a script to be executed every time the container starts.
 COPY entrypoint.sh /usr/bin/
