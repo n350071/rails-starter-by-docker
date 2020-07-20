@@ -69,3 +69,6 @@ rails-new:
 
 db-create:
 	docker-compose run web bundle exec rails db:create
+
+up-d:
+	docker-compose run -d --service-ports web
