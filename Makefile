@@ -47,8 +47,8 @@ rollback:
 
 # commands for init project
 init-project:
-	make rails-new
 	make docker-build-no-cache
+	make rails-new
 	make webpacker-install
 	make install
 	mv database.yml config/database.yml
