@@ -47,6 +47,10 @@ when you want to stop your docker, please type
 make stop
 ```
 
+## Option
+You can off the comment at `# - ./vendor/bundle:/usr/local/bundle` in `docker-compose.yml`.
+So you can save the bundled gems in your directory.
+
 ## Help
 ```
 make help
