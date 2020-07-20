@@ -65,7 +65,7 @@ init-project:
 ## rails new --force: to overwrite Gemfile
 ## rails new --skip-bundle: we will bundle later, so skip
 rails-new:
-	docker-compose run --no-deps web rails new . --force --database=mysql --skip-turbolinks --skip-test --skip-bundle
+	docker-compose run --no-deps web rails new . --force --database=mysql --skip-turbolinks --skip-test
 
 db-create:
 	docker-compose run web bundle exec rails db:create
