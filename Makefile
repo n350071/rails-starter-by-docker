@@ -50,7 +50,7 @@ init-project:
 	docker-compose run --no-deps web bundle install # vendor/bundle 以下を更新するため
 	make docker-build-no-cache
 	make rails-new
-	make webpacker-install
+	# make webpacker-install
 	make install
 	mv database.yml config/database.yml
 	make db-create
@@ -66,7 +66,8 @@ init-project:
 ## rails new --force: to overwrite Gemfile
 ## rails new --skip-bundle: we will bundle later, so skip
 rails-new:
-	docker-compose run --no-deps web rails new . --force --database=mysql --skip-turbolinks --skip-test --skip-bundle
+	docker-compose run --no-deps web rails new . --force --database=mysql --skip-turbolinks --skip-test
+	# docker-compose run --no-deps web rails new . --force --database=mysql --skip-turbolinks --skip-test --skip-bundle
 
 db-create:
 	docker-compose run web bundle exec rails db:create
