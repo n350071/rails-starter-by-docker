@@ -47,6 +47,7 @@ rollback:
 
 # commands for init project
 init-project:
+	docker-compose run --no-deps web bundle install # vendor/bundle 以下を更新するため
 	make docker-build-no-cache
 	make rails-new
 	make webpacker-install
