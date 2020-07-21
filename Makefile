@@ -47,9 +47,15 @@ rollback:
 
 # commands for init project
 init-project:
-	docker-compose run --no-deps web bundle install # vendor/bundle 以下を更新するため
+	# 初回ビルドでは、Gemfileになにも書いてなくて、bundle installしても何も起こらない。(vendor/bundle上書き問題対応のため)
 	make docker-build-no-cache
+	# Gemfileを記述する
+	sh gemfile.sh
+	# railsのインストール
+	docker-compose run --no-deps web bundle install
+	# rails new
 	make rails-new
+	# (rails newの時点で動いているっぽいので一旦コメントアウト)
 	# make webpacker-install
 	make install
 	mv database.yml config/database.yml
@@ -67,7 +73,6 @@ init-project:
 ## rails new --skip-bundle: we will bundle later, so skip
 rails-new:
 	docker-compose run --no-deps web rails new . --force --database=mysql --skip-turbolinks --skip-test
-	# docker-compose run --no-deps web rails new . --force --database=mysql --skip-turbolinks --skip-test --skip-bundle
 
 db-create:
 	docker-compose run web bundle exec rails db:create
