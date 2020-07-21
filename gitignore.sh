@@ -1,5 +1,8 @@
 cat >> .gitignore << EOF
 
+# Ignore vendor/bundle
+/vendor/bundle
+
 # Ignore My SQL
 /mysql
 
