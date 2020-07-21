@@ -1,7 +1,7 @@
 cat >> .gitignore << EOF
 
 # Ignore My SQL
-/mysql/*
+/mysql
 
 # OSX system file
 .DS_Store
