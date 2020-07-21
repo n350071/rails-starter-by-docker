@@ -10,7 +10,7 @@ services:
     volumes:
       - ./mysql:/etc/mysql/conf.d # Mysql8.0 ではデフォルトの認証形式を mysql_native_password から caching_sha2_password に変更している。これは回避の手段。
       - ./mysql/data:/var/lib/mysql
-  rails:
+  web:
     build: .
     command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
     volumes:
