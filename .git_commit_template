@@ -1,0 +1,24 @@
+
+# === format ===
+# :emoji: issue-id issue-title
+
+# ==== example ====
+# :+1: SR-400 認証機能の実装
+# :bug: BG-128 Thanksメッセージは２通ではなく１通
+
+# ==== Emojis ====
+# 👍 小さな機能追加 :+1:
+# 🎉 大きな機能追加 :tada:
+# 🐛 バグ修正 :bug:
+# 💚 リファクタリング  :green_heart:
+# ✅ テストの追加 :white_check_mark:
+# 📝 ドキュメント追加 :memo:
+# 🆙 バージョンアップ :up:
+# 💎 gemを入れた :gem:
+# 🐳 docker :spouting whale:
+# 自由に追加してください。(ターミナルで表示が崩れるもの以外で)
+
+# 設定方法 (.git/config)
+# git config --local commit.template .git_commit_template
+
+##########################################################
